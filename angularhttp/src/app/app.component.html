@@ -1,0 +1,61 @@
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-5">
+                      <h2><b>Users</b></h2>
+                  </div>
+                  <!-- <div class="col-sm-7">
+                      <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                      <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
+                  </div> -->
+              </div>
+          </div>
+          <table class="table table-striped table-hover">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th>Picture</th>
+                      <th>Name</th>						
+                      <th>Username</th>
+                      <th>Email</th>
+                   
+                      <th>Phone</th>
+                      <th>Website</th>
+                  </tr>
+              </thead>
+              <tbody  *ngFor="let user of users; let number = index">
+                  <tr>
+                      <td>#{{ number + 1 }}</td>
+                      <td>
+                        <img [src]="user.image" height="50" width="50" class="avatar" alt="Avatar"> 
+                      </td>
+                      <td>{{ user.name }}</td>
+                      <td>{{ user.username }}</td>
+                      <td>{{ user.email }}</td>      
+                                                      
+                      <td>{{ user.phone }}</td>
+                      <td>{{ user.website }}</td>
+                      <!-- <td>
+                          <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                          <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                      </td> -->
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>     
+
+
+  <!-- <p *ngIf="fileStatus.status==='progress'">{{ fileStatus.percentage }}%</p>
+  <progress style="width: 500px;height: 25px;" *ngIf="fileStatus.status==='progress'" 
+      [value]="fileStatus.percentage" max="100"></progress>
+
+
+  <form enctype="multipart/form-data">
+    <input type="file" (change)="onUploadFile($event.target.files)" name="files" multiple />
+  </form> -->
+
+<router-outlet></router-outlet>
